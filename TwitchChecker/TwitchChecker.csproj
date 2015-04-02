@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5DEFF605-0550-4F32-8142-DBF427F3DFF0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TwitchChecker</RootNamespace>
+    <AssemblyName>TwitchChecker</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>twitch.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helper\ViewMode.cs" />
+    <Compile Include="Livestreamer\Quality.cs" />
+    <Compile Include="Theme\ColorProvider.cs" />
+    <Compile Include="Theme\Themes\Dark.cs" />
+    <Compile Include="Theme\Themes\IThemeProvider.cs" />
+    <Compile Include="Theme\Themes\Light.cs" />
+    <Compile Include="Theme\Theme.cs" />
+    <Compile Include="Theme\SkinManager.cs" />
+    <Compile Include="Theme\Themes\Twitch.cs" />
+    <Compile Include="Theme\Themes\TwitchNow.cs" />
+    <Compile Include="IController.cs" />
+    <Compile Include="Livestreamer\LiveStreamer.cs" />
+    <Compile Include="Helper\Utility.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Interfaces\IUIProvider.cs" />
+    <Compile Include="UI\Dlg\Common\FormEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dlg\Common\FormEx.Designer.cs">
+      <DependentUpon>FormEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Dlg\NotificationDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dlg\NotificationDlg.Designer.cs">
+      <DependentUpon>NotificationDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Interfaces\Views.cs" />
+    <Compile Include="UI\UserComponent\NotificationManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\UserComponent\NotificationManager.Designer.cs">
+      <DependentUpon>NotificationManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserControls\ChannelOverview\ChannelContextMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\ChannelOverview\ChannelCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\ChannelOverview\ChannelCtrl.Designer.cs">
+      <DependentUpon>ChannelCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserControls\ChannelOverview\StatusPanelCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\ChannelOverview\StatusPanelCtrl.Designer.cs">
+      <DependentUpon>StatusPanelCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserControls\Common\ComboBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\Common\ContextMenuStripEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\Common\FlatComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\Common\UserControlEx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\ChannelOverview\FollowingCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\ChannelOverview\FollowingCtrl.Designer.cs">
+      <DependentUpon>FollowingCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserControls\MultiCastCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\MultiCastCtrl.Designer.cs">
+      <DependentUpon>MultiCastCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserControls\NotificationCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\NotificationCtrl.Designer.cs">
+      <DependentUpon>NotificationCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserControls\SettingsCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\SettingsCtrl.Designer.cs">
+      <DependentUpon>SettingsCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserControls\SidebarCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\SidebarCtrl.Designer.cs">
+      <DependentUpon>SidebarCtrl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\Dlg\Common\FormEx.resx">
+      <DependentUpon>FormEx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Dlg\NotificationDlg.resx">
+      <DependentUpon>NotificationDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserControls\ChannelOverview\ChannelCtrl.resx">
+      <DependentUpon>ChannelCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserControls\ChannelOverview\StatusPanelCtrl.resx">
+      <DependentUpon>StatusPanelCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserControls\Common\UserControlEx.resx">
+      <DependentUpon>UserControlEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserControls\ChannelOverview\FollowingCtrl.resx">
+      <DependentUpon>FollowingCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserControls\MultiCastCtrl.resx">
+      <DependentUpon>MultiCastCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserControls\NotificationCtrl.resx">
+      <DependentUpon>NotificationCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserControls\SettingsCtrl.resx">
+      <DependentUpon>SettingsCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserControls\SidebarCtrl.resx">
+      <DependentUpon>SidebarCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Twitch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Viewer.png" />
+    <Content Include="twitch.ico" />
+    <None Include="Resources\Following.png" />
+    <None Include="Resources\Settings.png" />
+    <None Include="Resources\Multicast.png" />
+    <None Include="Resources\Search.png" />
+    <None Include="Resources\twitch.ico" />
+    <None Include="Resources\Default Logo.png" />
+    <Content Include="ToDo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\TwitchSharp\TwitchSharp.csproj">
+      <Project>{b5bb4cfc-57a0-43cb-b28c-3aafe6e9bdcb}</Project>
+      <Name>TwitchSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
