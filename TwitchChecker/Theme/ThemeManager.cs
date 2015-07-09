@@ -3,17 +3,17 @@ using TwitchChecker.Theme.Themes;
 
 namespace TwitchChecker.Theme
 {
-	public class SkinManager
+	public class ThemeManager
 	{
 		//==============================================Fields
 
-		private static SkinManager instance;
+		private static ThemeManager instance;
 
 		public IThemeProvider ColorProvider { get; private set; }
 
 		//==============================================Ctor
 
-		private SkinManager()
+		private ThemeManager()
 		{
 			//When the Provider isnt set here its imposible to Show UserControls in the Designer
 			ColorProvider = new Dark();
@@ -48,12 +48,12 @@ namespace TwitchChecker.Theme
 
 		//==============================================Properties
 
-		public static SkinManager Instance
+		public static ThemeManager Instance
 		{
 			get
 			{
 				if (instance == null)
-					instance = new SkinManager();
+					instance = new ThemeManager();
 				return instance;
 			}
 		}

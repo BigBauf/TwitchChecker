@@ -10,7 +10,7 @@ namespace TwitchChecker.UI.UserControls.Common
 
 		protected IController Controller { get; set; }
 
-		protected SkinManager SkinManager { get { return SkinManager.Instance; } }
+		protected ThemeManager SkinManager { get { return ThemeManager.Instance; } }
 
 		//==============================================Ctor
 

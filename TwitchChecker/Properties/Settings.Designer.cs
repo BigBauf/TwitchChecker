@@ -134,18 +134,6 @@ namespace TwitchChecker.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool ShowOfflineChannels {
-            get {
-                return ((bool)(this["ShowOfflineChannels"]));
-            }
-            set {
-                this["ShowOfflineChannels"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool PlayNotificationSound {
             get {
                 return ((bool)(this["PlayNotificationSound"]));
@@ -212,6 +200,42 @@ namespace TwitchChecker.Properties {
             }
             set {
                 this["Setting"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowStreamTitle {
+            get {
+                return ((bool)(this["ShowStreamTitle"]));
+            }
+            set {
+                this["ShowStreamTitle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool OnlineCollapsed {
+            get {
+                return ((bool)(this["OnlineCollapsed"]));
+            }
+            set {
+                this["OnlineCollapsed"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OfflineCollapsed {
+            get {
+                return ((bool)(this["OfflineCollapsed"]));
+            }
+            set {
+                this["OfflineCollapsed"] = value;
             }
         }
     }

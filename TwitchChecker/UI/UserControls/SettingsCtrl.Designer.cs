@@ -31,10 +31,10 @@
 			this.pnlMain = new System.Windows.Forms.Panel();
 			this.splitter4 = new System.Windows.Forms.Splitter();
 			this.grbMisc = new System.Windows.Forms.Panel();
+			this.cbxThemes = new TwitchChecker.UI.UserControls.Common.ComboBoxEx();
 			this.label1 = new System.Windows.Forms.Label();
 			this.labelEx1 = new System.Windows.Forms.Label();
 			this.cbStartWithWindows = new System.Windows.Forms.CheckBox();
-			this.cbShowOfflineChannels = new System.Windows.Forms.CheckBox();
 			this.cbShowNotification = new System.Windows.Forms.CheckBox();
 			this.cbPlayNotificationSound = new System.Windows.Forms.CheckBox();
 			this.splitter1 = new System.Windows.Forms.Splitter();
@@ -47,16 +47,14 @@
 			this.labelEx3 = new System.Windows.Forms.Label();
 			this.rdbLivestreamer = new System.Windows.Forms.RadioButton();
 			this.rdbPopout = new System.Windows.Forms.RadioButton();
+			this.cbxQuality = new TwitchChecker.UI.UserControls.Common.ComboBoxEx();
 			this.rbFullPage = new System.Windows.Forms.RadioButton();
 			this.lblQuality = new System.Windows.Forms.Label();
 			this.splitter3 = new System.Windows.Forms.Splitter();
 			this.grbTwitch = new System.Windows.Forms.Panel();
-			this.btnTestNotifcation = new System.Windows.Forms.Button();
 			this.labelEx4 = new System.Windows.Forms.Label();
 			this.txtUsername = new System.Windows.Forms.TextBox();
 			this.lblUsername = new System.Windows.Forms.Label();
-			this.cbxThemes = new TwitchChecker.UI.UserControls.Common.ComboBoxEx();
-			this.cbxQuality = new TwitchChecker.UI.UserControls.Common.ComboBoxEx();
 			this.pnlMain.SuspendLayout();
 			this.grbMisc.SuspendLayout();
 			this.grbLivestreamer.SuspendLayout();
@@ -86,7 +84,7 @@
 			this.splitter4.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.splitter4.Cursor = System.Windows.Forms.Cursors.Arrow;
 			this.splitter4.Dock = System.Windows.Forms.DockStyle.Top;
-			this.splitter4.Location = new System.Drawing.Point(0, 419);
+			this.splitter4.Location = new System.Drawing.Point(0, 368);
 			this.splitter4.Name = "splitter4";
 			this.splitter4.Size = new System.Drawing.Size(328, 2);
 			this.splitter4.TabIndex = 33;
@@ -99,22 +97,34 @@
 			this.grbMisc.Controls.Add(this.label1);
 			this.grbMisc.Controls.Add(this.labelEx1);
 			this.grbMisc.Controls.Add(this.cbStartWithWindows);
-			this.grbMisc.Controls.Add(this.cbShowOfflineChannels);
 			this.grbMisc.Controls.Add(this.cbShowNotification);
 			this.grbMisc.Controls.Add(this.cbPlayNotificationSound);
 			this.grbMisc.Dock = System.Windows.Forms.DockStyle.Top;
 			this.grbMisc.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.grbMisc.Location = new System.Drawing.Point(0, 256);
+			this.grbMisc.Location = new System.Drawing.Point(0, 232);
 			this.grbMisc.Name = "grbMisc";
 			this.grbMisc.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
-			this.grbMisc.Size = new System.Drawing.Size(328, 163);
+			this.grbMisc.Size = new System.Drawing.Size(328, 136);
 			this.grbMisc.TabIndex = 28;
 			this.grbMisc.Text = "Misc.";
+			// 
+			// cbxThemes
+			// 
+			this.cbxThemes.BackColor = System.Drawing.SystemColors.Control;
+			this.cbxThemes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbxThemes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.cbxThemes.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.cbxThemes.FormattingEnabled = true;
+			this.cbxThemes.Location = new System.Drawing.Point(6, 104);
+			this.cbxThemes.Name = "cbxThemes";
+			this.cbxThemes.Size = new System.Drawing.Size(120, 21);
+			this.cbxThemes.TabIndex = 32;
+			this.cbxThemes.SelectionChangeCommitted += new System.EventHandler(this.Themes_SelectionChangeCommitted);
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(5, 115);
+			this.label1.Location = new System.Drawing.Point(8, 88);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(40, 13);
 			this.label1.TabIndex = 31;
@@ -141,43 +151,28 @@
 			this.cbStartWithWindows.UseVisualStyleBackColor = true;
 			this.cbStartWithWindows.CheckedChanged += new System.EventHandler(this.Misc_CheckedChanged);
 			// 
-			// cbShowOfflineChannels
-			// 
-			this.cbShowOfflineChannels.AutoSize = true;
-			this.cbShowOfflineChannels.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.cbShowOfflineChannels.Location = new System.Drawing.Point(8, 48);
-			this.cbShowOfflineChannels.Name = "cbShowOfflineChannels";
-			this.cbShowOfflineChannels.Size = new System.Drawing.Size(128, 17);
-			this.cbShowOfflineChannels.TabIndex = 28;
-			this.cbShowOfflineChannels.Text = "show offline channels";
-			this.cbShowOfflineChannels.UseVisualStyleBackColor = true;
-			this.cbShowOfflineChannels.CheckedChanged += new System.EventHandler(this.Misc_CheckedChanged);
-			// 
 			// cbShowNotification
 			// 
 			this.cbShowNotification.AutoSize = true;
-			this.cbShowNotification.Enabled = false;
 			this.cbShowNotification.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.cbShowNotification.Location = new System.Drawing.Point(8, 71);
+			this.cbShowNotification.Location = new System.Drawing.Point(8, 47);
 			this.cbShowNotification.Name = "cbShowNotification";
 			this.cbShowNotification.Size = new System.Drawing.Size(105, 17);
 			this.cbShowNotification.TabIndex = 23;
 			this.cbShowNotification.Text = "show notification";
 			this.cbShowNotification.UseVisualStyleBackColor = true;
-			this.cbShowNotification.Visible = false;
 			this.cbShowNotification.CheckedChanged += new System.EventHandler(this.Misc_CheckedChanged);
 			// 
 			// cbPlayNotificationSound
 			// 
 			this.cbPlayNotificationSound.AutoSize = true;
 			this.cbPlayNotificationSound.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.cbPlayNotificationSound.Location = new System.Drawing.Point(8, 95);
+			this.cbPlayNotificationSound.Location = new System.Drawing.Point(8, 68);
 			this.cbPlayNotificationSound.Name = "cbPlayNotificationSound";
-			this.cbPlayNotificationSound.Size = new System.Drawing.Size(77, 17);
+			this.cbPlayNotificationSound.Size = new System.Drawing.Size(131, 17);
 			this.cbPlayNotificationSound.TabIndex = 24;
-			this.cbPlayNotificationSound.Text = "play sound";
+			this.cbPlayNotificationSound.Text = "play notification sound";
 			this.cbPlayNotificationSound.UseVisualStyleBackColor = true;
-			this.cbPlayNotificationSound.Visible = false;
 			this.cbPlayNotificationSound.CheckedChanged += new System.EventHandler(this.Misc_CheckedChanged);
 			// 
 			// splitter1
@@ -185,7 +180,7 @@
 			this.splitter1.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.splitter1.Cursor = System.Windows.Forms.Cursors.Arrow;
 			this.splitter1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.splitter1.Location = new System.Drawing.Point(0, 254);
+			this.splitter1.Location = new System.Drawing.Point(0, 230);
 			this.splitter1.Name = "splitter1";
 			this.splitter1.Size = new System.Drawing.Size(328, 2);
 			this.splitter1.TabIndex = 30;
@@ -202,7 +197,7 @@
 			this.grbLivestreamer.Location = new System.Drawing.Point(0, 178);
 			this.grbLivestreamer.Name = "grbLivestreamer";
 			this.grbLivestreamer.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
-			this.grbLivestreamer.Size = new System.Drawing.Size(328, 76);
+			this.grbLivestreamer.Size = new System.Drawing.Size(328, 52);
 			this.grbLivestreamer.TabIndex = 29;
 			this.grbLivestreamer.Text = "Livestreamer";
 			// 
@@ -219,12 +214,13 @@
 			// 
 			this.cbHideConsole.AutoSize = true;
 			this.cbHideConsole.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.cbHideConsole.Location = new System.Drawing.Point(8, 48);
+			this.cbHideConsole.Location = new System.Drawing.Point(136, 24);
 			this.cbHideConsole.Name = "cbHideConsole";
 			this.cbHideConsole.Size = new System.Drawing.Size(86, 17);
 			this.cbHideConsole.TabIndex = 30;
 			this.cbHideConsole.Text = "hide console";
 			this.cbHideConsole.UseVisualStyleBackColor = true;
+			this.cbHideConsole.Visible = false;
 			this.cbHideConsole.CheckedChanged += new System.EventHandler(this.Livestreamer_CheckedChanged);
 			// 
 			// cbKeepConsoleOpen
@@ -273,9 +269,9 @@
 			this.labelEx3.AutoSize = true;
 			this.labelEx3.Location = new System.Drawing.Point(3, 3);
 			this.labelEx3.Name = "labelEx3";
-			this.labelEx3.Size = new System.Drawing.Size(59, 13);
+			this.labelEx3.Size = new System.Drawing.Size(161, 13);
 			this.labelEx3.TabIndex = 32;
-			this.labelEx3.Text = "View mode";
+			this.labelEx3.Text = "Default view mode (double click)";
 			// 
 			// rdbLivestreamer
 			// 
@@ -302,6 +298,19 @@
 			this.rdbPopout.Text = "Popout";
 			this.rdbPopout.UseVisualStyleBackColor = true;
 			this.rdbPopout.CheckedChanged += new System.EventHandler(this.ViewMode_CheckedChanged);
+			// 
+			// cbxQuality
+			// 
+			this.cbxQuality.BackColor = System.Drawing.SystemColors.Control;
+			this.cbxQuality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbxQuality.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.cbxQuality.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.cbxQuality.FormattingEnabled = true;
+			this.cbxQuality.Location = new System.Drawing.Point(107, 71);
+			this.cbxQuality.Name = "cbxQuality";
+			this.cbxQuality.Size = new System.Drawing.Size(120, 21);
+			this.cbxQuality.TabIndex = 20;
+			this.cbxQuality.SelectionChangeCommitted += new System.EventHandler(this.Quality_SelectionChangeCommitted);
 			// 
 			// rbFullPage
 			// 
@@ -339,7 +348,6 @@
 			// grbTwitch
 			// 
 			this.grbTwitch.AutoSize = true;
-			this.grbTwitch.Controls.Add(this.btnTestNotifcation);
 			this.grbTwitch.Controls.Add(this.labelEx4);
 			this.grbTwitch.Controls.Add(this.txtUsername);
 			this.grbTwitch.Controls.Add(this.lblUsername);
@@ -351,17 +359,6 @@
 			this.grbTwitch.Size = new System.Drawing.Size(328, 71);
 			this.grbTwitch.TabIndex = 26;
 			this.grbTwitch.Text = "Twitch";
-			// 
-			// btnTestNotifcation
-			// 
-			this.btnTestNotifcation.Location = new System.Drawing.Point(174, 37);
-			this.btnTestNotifcation.Name = "btnTestNotifcation";
-			this.btnTestNotifcation.Size = new System.Drawing.Size(75, 23);
-			this.btnTestNotifcation.TabIndex = 34;
-			this.btnTestNotifcation.Text = "textNotifcation";
-			this.btnTestNotifcation.UseVisualStyleBackColor = true;
-			this.btnTestNotifcation.Visible = false;
-			this.btnTestNotifcation.Click += new System.EventHandler(this.TestNotifcation_Click);
 			// 
 			// labelEx4
 			// 
@@ -389,32 +386,6 @@
 			this.lblUsername.Size = new System.Drawing.Size(55, 13);
 			this.lblUsername.TabIndex = 15;
 			this.lblUsername.Text = "Username";
-			// 
-			// cbxThemes
-			// 
-			this.cbxThemes.BackColor = System.Drawing.SystemColors.Control;
-			this.cbxThemes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cbxThemes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.cbxThemes.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.cbxThemes.FormattingEnabled = true;
-			this.cbxThemes.Location = new System.Drawing.Point(8, 131);
-			this.cbxThemes.Name = "cbxThemes";
-			this.cbxThemes.Size = new System.Drawing.Size(120, 21);
-			this.cbxThemes.TabIndex = 32;
-			this.cbxThemes.SelectionChangeCommitted += new System.EventHandler(this.Themes_SelectionChangeCommitted);
-			// 
-			// cbxQuality
-			// 
-			this.cbxQuality.BackColor = System.Drawing.SystemColors.Control;
-			this.cbxQuality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cbxQuality.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.cbxQuality.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.cbxQuality.FormattingEnabled = true;
-			this.cbxQuality.Location = new System.Drawing.Point(107, 71);
-			this.cbxQuality.Name = "cbxQuality";
-			this.cbxQuality.Size = new System.Drawing.Size(120, 21);
-			this.cbxQuality.TabIndex = 20;
-			this.cbxQuality.SelectionChangeCommitted += new System.EventHandler(this.Quality_SelectionChangeCommitted);
 			// 
 			// SettingsCtrl
 			// 
@@ -451,11 +422,9 @@
 		private System.Windows.Forms.RadioButton rbFullPage;
 		private System.Windows.Forms.Panel grbTwitch;
 		private System.Windows.Forms.CheckBox cbPlayNotificationSound;
-		private System.Windows.Forms.CheckBox cbShowOfflineChannels;
 		private System.Windows.Forms.CheckBox cbKeepConsoleOpen;
 		private System.Windows.Forms.Panel pnlMain;
 		private System.Windows.Forms.CheckBox cbStartWithWindows;
-		private System.Windows.Forms.CheckBox cbHideConsole;
 		private System.Windows.Forms.Splitter splitter1;
 		private System.Windows.Forms.Splitter splitter4;
 		private System.Windows.Forms.Panel grbMisc;
@@ -469,7 +438,7 @@
 		private System.Windows.Forms.Label labelEx4;
 		private TwitchChecker.UI.UserControls.Common.ComboBoxEx cbxThemes;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Button btnTestNotifcation;
+		private System.Windows.Forms.CheckBox cbHideConsole;
 
 	}
 }

@@ -29,12 +29,12 @@ namespace TwitchChecker.UI.UserControls.Common
 			if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
 			{
 				background = Color.LightBlue;
-				text = SkinManager.Instance.ColorProvider.TextContextMenuHighlight;
+				text = ThemeManager.Instance.ColorProvider.TextContextMenuHighlight;
 			}
 			else
 			{
 				background = Color.White;
-				text = SkinManager.Instance.ColorProvider.TextContextMenu;
+				text = ThemeManager.Instance.ColorProvider.TextContextMenu;
 			}
 
 			text = Color.Black;

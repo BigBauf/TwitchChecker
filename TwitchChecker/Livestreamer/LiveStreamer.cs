@@ -22,10 +22,7 @@ namespace TwitchChecker.Livestreamer
 				File.WriteAllText(BatchPath, (String.Format(BATCH_COMMAND, p_channel, p_quality, p_keepConsoleOpen ? "pause" : String.Empty)));
 				Process proces = new Process();
 				proces.StartInfo.FileName = BatchPath;
-				if (p_hideConsole)
-				{
-					proces.StartInfo.UseShellExecute = false;
-				}
+				proces.StartInfo.UseShellExecute = !p_hideConsole;
 				proces.Start();
 			}
 			catch (Exception ex)

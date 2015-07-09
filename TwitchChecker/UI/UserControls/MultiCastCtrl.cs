@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Windows.Forms;
 using TwitchChecker.Helper;
-using TwitchChecker.Theme;
 using TwitchChecker.UI.UserControls.Common;
 using TwitchSharp.Enums;
 using TwitchSharp.Interfaces;

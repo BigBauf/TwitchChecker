@@ -4,7 +4,6 @@ using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using TwitchChecker.Helper;
-using TwitchChecker.Theme;
 using TwitchChecker.UI.UserControls.Common;
 using TwitchSharp.Enums;
 using TwitchSharp.Interfaces;
@@ -26,7 +25,6 @@ namespace TwitchChecker.UI.UserControls
 		{
 			base.OnPaint(e);
 			SetBackColor(this, SkinManager.ColorProvider.ChannelBackground);
-			statusPnlOffline.Visible = Properties.Settings.Default.ShowOfflineChannels;
 		}
 
 		protected override void OnInvalidated(InvalidateEventArgs e)
@@ -82,6 +80,33 @@ namespace TwitchChecker.UI.UserControls
 			Controller = m_controller;
 			Controller.TwitchClient.ChannelList.CollectionChanged += ChannelList_CollectionChanged;
 			notificationManager.Init(Controller);
+			Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
+			try
+			{
+				if (Properties.Settings.Default.Username != String.Empty)
+				{
+					Thread thread = new Thread(() => Controller.LoadFollowingChannel(Properties.Settings.Default.Username));
+					thread.Start();
+				}
+			}
+			catch (Exception ex)
+			{
+				Utility.LogTrace(ex.Message + " in " + MethodBase.GetCurrentMethod());
+			}
+		}
+
+		private void Default_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+		{
+			if (e.PropertyName == "UserName")
+			{
+			}
+		}
+
+		internal void Reload()
+		{
+			statusPnlOnline.Channels.Controls.Clear();
+			statusPnlOffline.Channels.Controls.Clear();
+
 			try
 			{
 				if (Properties.Settings.Default.Username != String.Empty)

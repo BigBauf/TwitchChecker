@@ -21,17 +21,17 @@ namespace TwitchChecker
 			UiProvider.Init(this);
 		}
 
-		public void LoadFollowingChannel(string p_channelName)
+		public void LoadFollowingChannel(string p_username)
 		{
 			try
 			{
 				if (TwitchClient != null)
 				{
 					TwitchClient.ChannelList.Clear();
-					TwitchClient.LoadFollowingChannels(p_channelName);
+					TwitchClient.LoadFollowingChannels(p_username);
 				}
 			}
-			catch (System.Exception ex)
+			catch (System.Exception)
 			{
 				//NONONONO DIRTY
 			}

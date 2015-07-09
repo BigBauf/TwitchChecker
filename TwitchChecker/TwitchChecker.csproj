@@ -2,6 +2,7 @@
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <TargetPlatformVersion>8.0</TargetPlatformVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5DEFF605-0550-4F32-8142-DBF427F3DFF0}</ProjectGuid>
@@ -58,8 +59,14 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.WindowsAPICodePack">
+      <HintPath>..\Windows API Code Pack 1.1\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,6 +75,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Windows.Data" />
+    <Reference Include="Windows.UI" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper\ViewMode.cs" />
@@ -77,7 +86,7 @@
     <Compile Include="Theme\Themes\IThemeProvider.cs" />
     <Compile Include="Theme\Themes\Light.cs" />
     <Compile Include="Theme\Theme.cs" />
-    <Compile Include="Theme\SkinManager.cs" />
+    <Compile Include="Theme\ThemeManager.cs" />
     <Compile Include="Theme\Themes\Twitch.cs" />
     <Compile Include="Theme\Themes\TwitchNow.cs" />
     <Compile Include="IController.cs" />
@@ -126,19 +135,28 @@
     <Compile Include="UI\UserControls\ChannelOverview\ChannelCtrl.Designer.cs">
       <DependentUpon>ChannelCtrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UserControls\ChannelOverview\StatusHeaderCtrl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\ChannelOverview\StatusHeaderCtrl.Designer.cs">
+      <DependentUpon>StatusHeaderCtrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UserControls\ChannelOverview\StatusPanelCtrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\UserControls\ChannelOverview\StatusPanelCtrl.Designer.cs">
       <DependentUpon>StatusPanelCtrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UserControls\ChannelOverview\ViewerCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\ChannelOverview\ViewerCtrl.Designer.cs">
+      <DependentUpon>ViewerCtrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UserControls\Common\ComboBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\UserControls\Common\ContextMenuStripEx.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UI\UserControls\Common\FlatComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\UserControls\Common\UserControlEx.cs">
@@ -195,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UserControls\ChannelOverview\StatusPanelCtrl.resx">
       <DependentUpon>StatusPanelCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserControls\ChannelOverview\ViewerCtrl.resx">
+      <DependentUpon>ViewerCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UserControls\Common\UserControlEx.resx">
       <DependentUpon>UserControlEx.cs</DependentUpon>
@@ -257,12 +278,14 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\TwitchSharp\TwitchSharp.csproj">
       <Project>{b5bb4cfc-57a0-43cb-b28c-3aafe6e9bdcb}</Project>
       <Name>TwitchSharp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WPF\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

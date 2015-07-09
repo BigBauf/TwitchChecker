@@ -99,8 +99,8 @@ namespace TwitchChecker.UI.Dlg
 		protected override void OnPaint(PaintEventArgs e)
 		{
 			base.OnPaint(e);
-			SetBackColor(this, SkinManager.Instance.ColorProvider.ChannelBackground);
-			SetForeColor(this, SkinManager.Instance.ColorProvider.TextCommon);
+			SetBackColor(this, ThemeManager.Instance.ColorProvider.ChannelBackground);
+			SetForeColor(this, ThemeManager.Instance.ColorProvider.TextCommon);
 		}
 
 		protected override void OnLoad(EventArgs e)

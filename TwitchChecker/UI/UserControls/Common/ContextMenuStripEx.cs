@@ -23,13 +23,12 @@ namespace TwitchChecker.UI.UserControls.Common
 			base.OnPaint(e);
 			if (!DesignMode)
 			{
-				BackColor = SkinManager.Instance.ColorProvider.ContextMenuBackground;
+				BackColor = ThemeManager.Instance.ColorProvider.ContextMenuBackground;
 				foreach (ToolStripMenuItem item in Items)
 				{
-					if (item.Selected)
-						item.ForeColor = SkinManager.Instance.ColorProvider.TextContextMenuHighlight;
-					else
-						item.ForeColor = SkinManager.Instance.ColorProvider.TextContextMenu;
+					item.ForeColor = item.Selected ?
+						ThemeManager.Instance.ColorProvider.TextContextMenuHighlight :
+						ThemeManager.Instance.ColorProvider.TextContextMenu;
 				}
 			}
 		}
@@ -46,11 +45,11 @@ namespace TwitchChecker.UI.UserControls.Common
 
 		private class ContextMenuColors : ProfessionalColorTable
 		{
-			public override Color MenuItemSelected { get { return SkinManager.Instance.ColorProvider.ContextMenuHighlighted; } }
+			public override Color MenuItemSelected { get { return ThemeManager.Instance.ColorProvider.ContextMenuHighlighted; } }
 
-			public override Color MenuItemBorder { get { return SkinManager.Instance.ColorProvider.None; } }
+			public override Color MenuItemBorder { get { return ThemeManager.Instance.ColorProvider.None; } }
 
-			public override Color MenuBorder { get { return SkinManager.Instance.ColorProvider.ContextMenuBorder; } }
+			public override Color MenuBorder { get { return ThemeManager.Instance.ColorProvider.ContextMenuBorder; } }
 		}
 	}
 }

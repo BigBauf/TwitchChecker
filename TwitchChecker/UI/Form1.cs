@@ -55,7 +55,7 @@ namespace TwitchChecker.UI
 			Location = Properties.Settings.Default.Location;
 			Size = Properties.Settings.Default.Size;
 			WindowState = Properties.Settings.Default.WindowState;
-			SetBackColor(pnlMain, SkinManager.Instance.ColorProvider.ChannelBackground);
+			SetBackColor(pnlMain, ThemeManager.Instance.ColorProvider.ChannelBackground);
 		}
 
 		private void Main_FormClosing(object sender, FormClosingEventArgs e)
@@ -155,6 +155,8 @@ namespace TwitchChecker.UI
 					default:
 						throw new NotImplementedException();
 				}
+				if (settingsCtrl.UsernameChanged)
+					followingCtrl.Reload();
 				pnlMain.Controls.Add(result);
 			}
 			m_currentView = p_view;

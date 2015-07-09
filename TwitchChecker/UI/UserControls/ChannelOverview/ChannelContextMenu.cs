@@ -11,11 +11,11 @@ namespace TwitchChecker.UI.UserControls.ChannelOverview
 	{
 		public IChannel Channel { get; private set; }
 
-		private ToolStripMenuItem btnLivestreamer = new System.Windows.Forms.ToolStripMenuItem();
-		private ToolStripMenuItem btnOpenStream = new System.Windows.Forms.ToolStripMenuItem();
-		private ToolStripMenuItem btnPopout = new System.Windows.Forms.ToolStripMenuItem();
-		private ToolStripMenuItem btnChat = new System.Windows.Forms.ToolStripMenuItem();
-		private ToolStripMenuItem btnPastBroadcasts = new System.Windows.Forms.ToolStripMenuItem();
+		private readonly ToolStripMenuItem btnLivestreamer = new System.Windows.Forms.ToolStripMenuItem();
+		private readonly ToolStripMenuItem btnOpenStream = new System.Windows.Forms.ToolStripMenuItem();
+		private readonly ToolStripMenuItem btnPopout = new System.Windows.Forms.ToolStripMenuItem();
+		private readonly ToolStripMenuItem btnChat = new System.Windows.Forms.ToolStripMenuItem();
+		private readonly ToolStripMenuItem btnPastBroadcasts = new System.Windows.Forms.ToolStripMenuItem();
 		public bool m_isContextMenuOpen;
 
 		public ChannelContextMenu(IContainer container)
@@ -28,11 +28,11 @@ namespace TwitchChecker.UI.UserControls.ChannelOverview
 			btnPastBroadcasts.Text = "Past Broadcasts";
 
 			Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            btnLivestreamer,
-            btnOpenStream,
-            btnPopout,
-            btnChat,
-            btnPastBroadcasts});
+				btnLivestreamer,
+				btnOpenStream,
+				btnPopout,
+				btnChat,
+				btnPastBroadcasts});
 		}
 
 		public void Init(IChannel p_channel)

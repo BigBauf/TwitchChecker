@@ -106,7 +106,6 @@
 			this.Controls.Add(this.pnlMain);
 			this.Controls.Add(this.sidebarCtrl1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.MaximumSize = new System.Drawing.Size(395, 9999);
 			this.Name = "Form1";
 			this.Text = "Twitch Checker";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);

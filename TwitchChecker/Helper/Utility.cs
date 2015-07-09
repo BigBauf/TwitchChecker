@@ -45,32 +45,6 @@ namespace TwitchChecker.Helper
 			return result;
 		}
 
-		/// <summary>
-		/// Downloads a page as a string
-		/// </summary>
-		/// <param name="p_url">URL</param>
-		/// <returns> see WebClient.DownloadString</returns>
-		public static string GetJson(string p_url)
-		{
-			string result = null;
-			try
-			{
-				if (Uri.IsWellFormedUriString(p_url, UriKind.Absolute))
-				{
-					WebClient client = new WebClient();
-					result = client.DownloadString(p_url);
-				}
-				else
-					throw new ArgumentException("Uri is not well formed");
-			}
-			catch (Exception ex)
-			{
-				result = null;
-				Utility.LogTrace(ex.Message + " in " + MethodBase.GetCurrentMethod());
-			}
-			return result;
-		}
-
 		/// <summary> Loads the Channel logo if a link exists/ if not-->default logo</summary>
 		/// <param name="p_channel"></param>
 		/// <returns>Image/null on exception etc</returns>
@@ -79,7 +53,6 @@ namespace TwitchChecker.Helper
 			Image result = null;
 			try
 			{
-				//creaate logo folder if not existing
 				Directory.CreateDirectory(LogoFolder);
 
 				string imageName = GetImageNameFromUrl(p_logo);
@@ -186,6 +159,14 @@ namespace TwitchChecker.Helper
 			{
 			}
 		}
+
+		public static string GetLogoPath(string p_channelName, string p_logo)
+		{
+			string imageName = GetImageNameFromUrl(p_logo);
+			return Path.Combine(LogoFolder, imageName);
+		}
+
+		//==============================================Properties
 
 		private static string DateStamp { get { return DateTime.Now.ToString(DATE_TIME_FORMAT); } }
 

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using TwitchChecker.Helper;
 using TwitchChecker.Livestreamer;
-using TwitchChecker.Theme;
 using TwitchChecker.UI.UserControls.Common;
 using TwitchSharp.Enums;
 using TwitchSharp.Events;
@@ -40,10 +39,6 @@ namespace TwitchChecker.UI.UserControls
 			SetColor();
 		}
 
-		protected override void OnInvalidated(InvalidateEventArgs e)
-		{
-		}
-
 		private void m_timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
 		{
 			Channel.Update();
@@ -69,8 +64,6 @@ namespace TwitchChecker.UI.UserControls
 				default:
 					break;
 			}
-
-			//Channel.OpenFullpage();
 		}
 
 		private void _MouseEnter(object sender, EventArgs e)
@@ -113,7 +106,6 @@ namespace TwitchChecker.UI.UserControls
 					break;
 
 				case ChannelProperties.Status:
-					//SetVisibilty();
 					StatusChanged(this, new EventArgs());
 					Utility.LogTrace(Channel.Username + " went: " + Channel.Status.ToString());
 					break;
@@ -130,7 +122,7 @@ namespace TwitchChecker.UI.UserControls
 			}
 		}
 
-		//==============================================Methoden
+		//==============================================Methods
 
 		public void Init(IChannel p_channel)
 		{
@@ -168,17 +160,6 @@ namespace TwitchChecker.UI.UserControls
 			lblViewer.ForeColor = SkinManager.ColorProvider.TextCommon;
 		}
 
-		[Obsolete("Following Control übernimmt die Sichtbarkeit")]
-		internal void SetVisibilty()
-		{
-			bool visbile;
-			if (Properties.Settings.Default.ShowOfflineChannels || !Properties.Settings.Default.ShowOfflineChannels && Channel.Status == Status.Online)
-				visbile = true;
-			else
-				visbile = false;
-			ThreadSafe(delegate { this.Visible = visbile; });
-		}
-
 		private void SetUsername()
 		{
 			ThreadSafe(delegate { lblUsername.Text = Channel.Username; });
@@ -203,6 +184,7 @@ namespace TwitchChecker.UI.UserControls
 		{
 			ThreadSafe(delegate { lblTitle.Text = Channel.Title; });
 			ThreadSafe(delegate { toolTip.SetToolTip(lblTitle, Channel.Title); });
+			ThreadSafe(delegate { toolTip.SetToolTip(lblUsername, Channel.Title); });
 		}
 
 		public void SetTimer()

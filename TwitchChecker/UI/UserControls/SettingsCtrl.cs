@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Windows.Forms;
 using TwitchChecker.Helper;
 using TwitchChecker.Theme;
@@ -19,7 +18,6 @@ namespace TwitchChecker.UI.UserControls
 		public SettingsCtrl()
 		{
 			InitializeComponent();
-			EnableButton();
 		}
 
 		//==============================================Events
@@ -37,26 +35,25 @@ namespace TwitchChecker.UI.UserControls
 			txtUsername.Text = Properties.Settings.Default.Username;
 			//Stream
 
-			cbxQuality.SelectedItem = (Quality)Enum.Parse(typeof(Quality), Properties.Settings.Default.Quality);
 			SetViewMode((ViewMode)Enum.Parse(typeof(ViewMode), Properties.Settings.Default.ViewMode));
 			cbxQuality.DataSource = Enum.GetValues(typeof(Quality));
 			cbxQuality.Enabled = rdbLivestreamer.Checked ? true : false;
+			cbxQuality.SelectedItem = (Quality)Enum.Parse(typeof(Quality), Properties.Settings.Default.Quality);
 			//Livestreamer
 			cbKeepConsoleOpen.Checked = Properties.Settings.Default.KeepConsoleOpen;
 			cbHideConsole.Checked = Properties.Settings.Default.HideConsole;
 			//Misc
 			cbStartWithWindows.Checked = Properties.Settings.Default.StartWithWindows;
-			cbShowOfflineChannels.Checked = Properties.Settings.Default.ShowOfflineChannels;
 			cbShowNotification.Checked = Properties.Settings.Default.ShowNotification;
 			cbPlayNotificationSound.Checked = Properties.Settings.Default.PlayNotificationSound;
 			cbxThemes.DataSource = Enum.GetValues(typeof(ThemeStyle));
-			cbxThemes.SelectedItem = SkinManager.Instance.ColorProvider.Theme;
+			cbxThemes.SelectedItem = ThemeManager.Instance.ColorProvider.Theme;
 		}
 
 		private void Username_TextChanged(object sender, EventArgs e)
 		{
+			UsernameChanged = Properties.Settings.Default.Username != txtUsername.Text;
 			Properties.Settings.Default.Username = txtUsername.Text;
-			UsernameChanged = true;
 		}
 
 		private void ViewMode_CheckedChanged(object sender, EventArgs e)
@@ -103,22 +100,12 @@ namespace TwitchChecker.UI.UserControls
 				Properties.Settings.Default.StartWithWindows = cbStartWithWindows.Checked;
 				Utility.SetStartup(Application.ExecutablePath, Properties.Settings.Default.StartWithWindows);
 			}
-			else if (sender == cbShowOfflineChannels)
-			{
-				Properties.Settings.Default.ShowOfflineChannels = cbShowOfflineChannels.Checked;
-				if (ParentForm != null)
-					ParentForm.Invalidate(true);
-			}
 			else if (sender == cbShowNotification)
-			{
 				Properties.Settings.Default.ShowNotification = cbShowNotification.Checked;
-			}
 			else if (sender == cbPlayNotificationSound)
-			{
 				Properties.Settings.Default.PlayNotificationSound = cbPlayNotificationSound.Checked;
-			}
 			else
-				throw new NotImplementedException();
+				throw new ArgumentException();
 		}
 
 		private void Quality_SelectionChangeCommitted(object sender, EventArgs e)
@@ -146,12 +133,6 @@ namespace TwitchChecker.UI.UserControls
 		internal void Init(IController m_controller)
 		{
 			Controller = m_controller;
-		}
-
-		[Conditional("DEBUG")]
-		private void EnableButton()
-		{
-			btnTestNotifcation.Visible = true;
 		}
 
 		private void SetViewMode(ViewMode p_viewMode)

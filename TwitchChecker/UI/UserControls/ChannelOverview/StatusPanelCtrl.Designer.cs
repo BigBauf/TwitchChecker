@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.pnlChannelView = new System.Windows.Forms.Panel();
-			this.pnlHeader = new System.Windows.Forms.Panel();
+			pnlHeader = new TwitchChecker.UI.UserControls.ChannelOverview.StatusHeaderCtrl();
 			this.lblStatus = new System.Windows.Forms.Label();
 			this.pnlHeader.SuspendLayout();
 			this.SuspendLayout();
@@ -51,6 +51,7 @@
 			this.pnlHeader.Name = "pnlHeader";
 			this.pnlHeader.Size = new System.Drawing.Size(360, 41);
 			this.pnlHeader.TabIndex = 0;
+			this.pnlHeader.Click += new System.EventHandler(this.pnlHeader_Click);
 			// 
 			// lblStatus
 			// 
@@ -68,6 +69,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.pnlChannelView);
 			this.Controls.Add(this.pnlHeader);
+			this.DoubleBuffered = true;
 			this.Name = "StatusPanelCtrl";
 			this.Size = new System.Drawing.Size(360, 334);
 			this.pnlHeader.ResumeLayout(false);
@@ -79,7 +81,7 @@
 
 		#endregion
 
-		private System.Windows.Forms.Panel pnlHeader;
+		private StatusHeaderCtrl pnlHeader;
 		private System.Windows.Forms.Panel pnlChannelView;
 		private System.Windows.Forms.Label lblStatus;
 	}

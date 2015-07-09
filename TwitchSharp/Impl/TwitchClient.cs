@@ -21,7 +21,7 @@ namespace TwitchSharp.Impl
 
 		//==============================================Fields
 
-		private ObservableCollection<IChannel> m_channelList;
+		private readonly ObservableCollection<IChannel> m_channelList;
 
 		private const string SEARCH_CHANNEL = StringProvider.TwitchApi + "search/channels?q={}";
 		private const string GET_FOLLOWING_CHANNEL = StringProvider.TwitchApi + "users/{0}/follows/channels?limit=100";
