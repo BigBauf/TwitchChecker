@@ -36,7 +36,6 @@
 			this.labelEx1 = new System.Windows.Forms.Label();
 			this.cbStartWithWindows = new System.Windows.Forms.CheckBox();
 			this.cbShowNotification = new System.Windows.Forms.CheckBox();
-			this.cbPlayNotificationSound = new System.Windows.Forms.CheckBox();
 			this.splitter1 = new System.Windows.Forms.Splitter();
 			this.grbLivestreamer = new System.Windows.Forms.Panel();
 			this.labelEx2 = new System.Windows.Forms.Label();
@@ -84,7 +83,7 @@
 			this.splitter4.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.splitter4.Cursor = System.Windows.Forms.Cursors.Arrow;
 			this.splitter4.Dock = System.Windows.Forms.DockStyle.Top;
-			this.splitter4.Location = new System.Drawing.Point(0, 368);
+			this.splitter4.Location = new System.Drawing.Point(0, 347);
 			this.splitter4.Name = "splitter4";
 			this.splitter4.Size = new System.Drawing.Size(328, 2);
 			this.splitter4.TabIndex = 33;
@@ -98,13 +97,12 @@
 			this.grbMisc.Controls.Add(this.labelEx1);
 			this.grbMisc.Controls.Add(this.cbStartWithWindows);
 			this.grbMisc.Controls.Add(this.cbShowNotification);
-			this.grbMisc.Controls.Add(this.cbPlayNotificationSound);
 			this.grbMisc.Dock = System.Windows.Forms.DockStyle.Top;
 			this.grbMisc.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.grbMisc.Location = new System.Drawing.Point(0, 232);
 			this.grbMisc.Name = "grbMisc";
 			this.grbMisc.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
-			this.grbMisc.Size = new System.Drawing.Size(328, 136);
+			this.grbMisc.Size = new System.Drawing.Size(328, 115);
 			this.grbMisc.TabIndex = 28;
 			this.grbMisc.Text = "Misc.";
 			// 
@@ -115,7 +113,7 @@
 			this.cbxThemes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.cbxThemes.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.cbxThemes.FormattingEnabled = true;
-			this.cbxThemes.Location = new System.Drawing.Point(6, 104);
+			this.cbxThemes.Location = new System.Drawing.Point(6, 83);
 			this.cbxThemes.Name = "cbxThemes";
 			this.cbxThemes.Size = new System.Drawing.Size(120, 21);
 			this.cbxThemes.TabIndex = 32;
@@ -124,7 +122,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(8, 88);
+			this.label1.Location = new System.Drawing.Point(5, 67);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(40, 13);
 			this.label1.TabIndex = 31;
@@ -162,18 +160,6 @@
 			this.cbShowNotification.Text = "show notification";
 			this.cbShowNotification.UseVisualStyleBackColor = true;
 			this.cbShowNotification.CheckedChanged += new System.EventHandler(this.Misc_CheckedChanged);
-			// 
-			// cbPlayNotificationSound
-			// 
-			this.cbPlayNotificationSound.AutoSize = true;
-			this.cbPlayNotificationSound.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.cbPlayNotificationSound.Location = new System.Drawing.Point(8, 68);
-			this.cbPlayNotificationSound.Name = "cbPlayNotificationSound";
-			this.cbPlayNotificationSound.Size = new System.Drawing.Size(131, 17);
-			this.cbPlayNotificationSound.TabIndex = 24;
-			this.cbPlayNotificationSound.Text = "play notification sound";
-			this.cbPlayNotificationSound.UseVisualStyleBackColor = true;
-			this.cbPlayNotificationSound.CheckedChanged += new System.EventHandler(this.Misc_CheckedChanged);
 			// 
 			// splitter1
 			// 
@@ -421,7 +407,6 @@
 		private System.Windows.Forms.RadioButton rdbPopout;
 		private System.Windows.Forms.RadioButton rbFullPage;
 		private System.Windows.Forms.Panel grbTwitch;
-		private System.Windows.Forms.CheckBox cbPlayNotificationSound;
 		private System.Windows.Forms.CheckBox cbKeepConsoleOpen;
 		private System.Windows.Forms.Panel pnlMain;
 		private System.Windows.Forms.CheckBox cbStartWithWindows;

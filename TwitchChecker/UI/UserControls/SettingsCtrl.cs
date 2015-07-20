@@ -45,7 +45,6 @@ namespace TwitchChecker.UI.UserControls
 			//Misc
 			cbStartWithWindows.Checked = Properties.Settings.Default.StartWithWindows;
 			cbShowNotification.Checked = Properties.Settings.Default.ShowNotification;
-			cbPlayNotificationSound.Checked = Properties.Settings.Default.PlayNotificationSound;
 			cbxThemes.DataSource = Enum.GetValues(typeof(ThemeStyle));
 			cbxThemes.SelectedItem = ThemeManager.Instance.ColorProvider.Theme;
 		}
@@ -72,7 +71,8 @@ namespace TwitchChecker.UI.UserControls
 				viewMode = ViewMode.Livestreamer;
 			}
 			else
-				throw new NotImplementedException();
+				throw new ArgumentException();
+
 			cbxQuality.Enabled = rdbLivestreamer.Checked ? true : false;
 			Properties.Settings.Default.ViewMode = viewMode.ToString();
 		}
@@ -89,7 +89,7 @@ namespace TwitchChecker.UI.UserControls
 				Properties.Settings.Default.HideConsole = cbHideConsole.Checked;
 			}
 			else
-				throw new NotImplementedException();
+				throw new ArgumentException();
 		}
 
 		private void Misc_CheckedChanged(object sender, EventArgs e)
@@ -102,8 +102,6 @@ namespace TwitchChecker.UI.UserControls
 			}
 			else if (sender == cbShowNotification)
 				Properties.Settings.Default.ShowNotification = cbShowNotification.Checked;
-			else if (sender == cbPlayNotificationSound)
-				Properties.Settings.Default.PlayNotificationSound = cbPlayNotificationSound.Checked;
 			else
 				throw new ArgumentException();
 		}

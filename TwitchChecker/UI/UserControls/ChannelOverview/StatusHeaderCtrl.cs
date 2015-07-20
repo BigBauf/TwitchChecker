@@ -10,7 +10,7 @@ namespace TwitchChecker.UI.UserControls.ChannelOverview
 
 		public bool Collapsed { get; set; }
 
-		private Pen pen = null;
+		private Pen m_pen = null;
 
 		//==============================================Ctor
 
@@ -20,8 +20,8 @@ namespace TwitchChecker.UI.UserControls.ChannelOverview
 			ResizeRedraw = true;
 			DoubleBuffered = true;
 
-			pen = new Pen(ThemeManager.Instance.ColorProvider.TextCommon, 3);
-			pen.EndCap = System.Drawing.Drawing2D.LineCap.Round;
+			m_pen = new Pen(ThemeManager.Instance.ColorProvider.TextCommon, 3);
+			m_pen.EndCap = System.Drawing.Drawing2D.LineCap.Round;
 		}
 
 		//==============================================Overrides
@@ -71,8 +71,8 @@ namespace TwitchChecker.UI.UserControls.ChannelOverview
 			Point rightStart = new Point(Width - 36, half);
 			Point rightEnd = new Point(Width - 28, half + 5);
 
-			e.Graphics.DrawLine(pen, leftEnd, leftStart);
-			e.Graphics.DrawLine(pen, rightStart, rightEnd);
+			e.Graphics.DrawLine(m_pen, leftEnd, leftStart);
+			e.Graphics.DrawLine(m_pen, rightStart, rightEnd);
 		}
 	}
 }

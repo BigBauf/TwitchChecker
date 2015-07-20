@@ -147,12 +147,6 @@
     <Compile Include="UI\UserControls\ChannelOverview\StatusPanelCtrl.Designer.cs">
       <DependentUpon>StatusPanelCtrl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\UserControls\ChannelOverview\ViewerCtrl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\UserControls\ChannelOverview\ViewerCtrl.Designer.cs">
-      <DependentUpon>ViewerCtrl.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\UserControls\Common\ComboBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -214,9 +208,6 @@
     <EmbeddedResource Include="UI\UserControls\ChannelOverview\StatusPanelCtrl.resx">
       <DependentUpon>StatusPanelCtrl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\UserControls\ChannelOverview\ViewerCtrl.resx">
-      <DependentUpon>ViewerCtrl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\UserControls\Common\UserControlEx.resx">
       <DependentUpon>UserControlEx.cs</DependentUpon>
     </EmbeddedResource>
@@ -259,7 +250,6 @@
     <None Include="Resources\Search.png" />
     <None Include="Resources\twitch.ico" />
     <None Include="Resources\Default Logo.png" />
-    <Content Include="ToDo.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

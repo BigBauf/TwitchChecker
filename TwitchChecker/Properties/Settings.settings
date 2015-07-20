@@ -51,10 +51,10 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="OnlineCollapsed" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="OfflineCollapsed" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>
