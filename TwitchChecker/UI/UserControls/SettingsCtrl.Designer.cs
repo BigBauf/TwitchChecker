@@ -76,7 +76,7 @@
 			this.pnlMain.Location = new System.Drawing.Point(0, 0);
 			this.pnlMain.Name = "pnlMain";
 			this.pnlMain.Size = new System.Drawing.Size(328, 533);
-			this.pnlMain.TabIndex = 31;
+			this.pnlMain.TabIndex = 0;
 			// 
 			// splitter4
 			// 
@@ -103,7 +103,7 @@
 			this.grbMisc.Name = "grbMisc";
 			this.grbMisc.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
 			this.grbMisc.Size = new System.Drawing.Size(328, 115);
-			this.grbMisc.TabIndex = 28;
+			this.grbMisc.TabIndex = 3;
 			this.grbMisc.Text = "Misc.";
 			// 
 			// cbxThemes
@@ -116,7 +116,7 @@
 			this.cbxThemes.Location = new System.Drawing.Point(6, 83);
 			this.cbxThemes.Name = "cbxThemes";
 			this.cbxThemes.Size = new System.Drawing.Size(120, 21);
-			this.cbxThemes.TabIndex = 32;
+			this.cbxThemes.TabIndex = 4;
 			this.cbxThemes.SelectionChangeCommitted += new System.EventHandler(this.Themes_SelectionChangeCommitted);
 			// 
 			// label1
@@ -125,7 +125,7 @@
 			this.label1.Location = new System.Drawing.Point(5, 67);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(40, 13);
-			this.label1.TabIndex = 31;
+			this.label1.TabIndex = 3;
 			this.label1.Text = "Theme";
 			// 
 			// labelEx1
@@ -134,7 +134,7 @@
 			this.labelEx1.Location = new System.Drawing.Point(3, 3);
 			this.labelEx1.Name = "labelEx1";
 			this.labelEx1.Size = new System.Drawing.Size(29, 13);
-			this.labelEx1.TabIndex = 30;
+			this.labelEx1.TabIndex = 0;
 			this.labelEx1.Text = "Misc";
 			// 
 			// cbStartWithWindows
@@ -144,7 +144,7 @@
 			this.cbStartWithWindows.Location = new System.Drawing.Point(8, 24);
 			this.cbStartWithWindows.Name = "cbStartWithWindows";
 			this.cbStartWithWindows.Size = new System.Drawing.Size(115, 17);
-			this.cbStartWithWindows.TabIndex = 29;
+			this.cbStartWithWindows.TabIndex = 1;
 			this.cbStartWithWindows.Text = "start with Windows";
 			this.cbStartWithWindows.UseVisualStyleBackColor = true;
 			this.cbStartWithWindows.CheckedChanged += new System.EventHandler(this.Misc_CheckedChanged);
@@ -156,7 +156,7 @@
 			this.cbShowNotification.Location = new System.Drawing.Point(8, 47);
 			this.cbShowNotification.Name = "cbShowNotification";
 			this.cbShowNotification.Size = new System.Drawing.Size(105, 17);
-			this.cbShowNotification.TabIndex = 23;
+			this.cbShowNotification.TabIndex = 2;
 			this.cbShowNotification.Text = "show notification";
 			this.cbShowNotification.UseVisualStyleBackColor = true;
 			this.cbShowNotification.CheckedChanged += new System.EventHandler(this.Misc_CheckedChanged);
@@ -184,7 +184,7 @@
 			this.grbLivestreamer.Name = "grbLivestreamer";
 			this.grbLivestreamer.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
 			this.grbLivestreamer.Size = new System.Drawing.Size(328, 52);
-			this.grbLivestreamer.TabIndex = 29;
+			this.grbLivestreamer.TabIndex = 2;
 			this.grbLivestreamer.Text = "Livestreamer";
 			// 
 			// labelEx2
@@ -193,7 +193,7 @@
 			this.labelEx2.Location = new System.Drawing.Point(3, 3);
 			this.labelEx2.Name = "labelEx2";
 			this.labelEx2.Size = new System.Drawing.Size(67, 13);
-			this.labelEx2.TabIndex = 31;
+			this.labelEx2.TabIndex = 0;
 			this.labelEx2.Text = "Livestreamer";
 			// 
 			// cbHideConsole
@@ -203,7 +203,7 @@
 			this.cbHideConsole.Location = new System.Drawing.Point(136, 24);
 			this.cbHideConsole.Name = "cbHideConsole";
 			this.cbHideConsole.Size = new System.Drawing.Size(86, 17);
-			this.cbHideConsole.TabIndex = 30;
+			this.cbHideConsole.TabIndex = 2;
 			this.cbHideConsole.Text = "hide console";
 			this.cbHideConsole.UseVisualStyleBackColor = true;
 			this.cbHideConsole.Visible = false;
@@ -216,7 +216,7 @@
 			this.cbKeepConsoleOpen.Location = new System.Drawing.Point(8, 24);
 			this.cbKeepConsoleOpen.Name = "cbKeepConsoleOpen";
 			this.cbKeepConsoleOpen.Size = new System.Drawing.Size(117, 17);
-			this.cbKeepConsoleOpen.TabIndex = 29;
+			this.cbKeepConsoleOpen.TabIndex = 1;
 			this.cbKeepConsoleOpen.Text = "keep console open";
 			this.cbKeepConsoleOpen.UseVisualStyleBackColor = true;
 			this.cbKeepConsoleOpen.CheckedChanged += new System.EventHandler(this.Livestreamer_CheckedChanged);
@@ -247,7 +247,7 @@
 			this.grbStreamOptions.Name = "grbStreamOptions";
 			this.grbStreamOptions.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
 			this.grbStreamOptions.Size = new System.Drawing.Size(328, 103);
-			this.grbStreamOptions.TabIndex = 25;
+			this.grbStreamOptions.TabIndex = 1;
 			this.grbStreamOptions.Text = "open stream in";
 			// 
 			// labelEx3
@@ -256,7 +256,7 @@
 			this.labelEx3.Location = new System.Drawing.Point(3, 3);
 			this.labelEx3.Name = "labelEx3";
 			this.labelEx3.Size = new System.Drawing.Size(161, 13);
-			this.labelEx3.TabIndex = 32;
+			this.labelEx3.TabIndex = 0;
 			this.labelEx3.Text = "Default view mode (double click)";
 			// 
 			// rdbLivestreamer
@@ -266,7 +266,7 @@
 			this.rdbLivestreamer.Location = new System.Drawing.Point(8, 72);
 			this.rdbLivestreamer.Name = "rdbLivestreamer";
 			this.rdbLivestreamer.Size = new System.Drawing.Size(85, 17);
-			this.rdbLivestreamer.TabIndex = 2;
+			this.rdbLivestreamer.TabIndex = 3;
 			this.rdbLivestreamer.TabStop = true;
 			this.rdbLivestreamer.Text = "Livestreamer";
 			this.rdbLivestreamer.UseVisualStyleBackColor = true;
@@ -279,7 +279,7 @@
 			this.rdbPopout.Location = new System.Drawing.Point(8, 48);
 			this.rdbPopout.Name = "rdbPopout";
 			this.rdbPopout.Size = new System.Drawing.Size(59, 17);
-			this.rdbPopout.TabIndex = 1;
+			this.rdbPopout.TabIndex = 2;
 			this.rdbPopout.TabStop = true;
 			this.rdbPopout.Text = "Popout";
 			this.rdbPopout.UseVisualStyleBackColor = true;
@@ -295,7 +295,7 @@
 			this.cbxQuality.Location = new System.Drawing.Point(107, 71);
 			this.cbxQuality.Name = "cbxQuality";
 			this.cbxQuality.Size = new System.Drawing.Size(120, 21);
-			this.cbxQuality.TabIndex = 20;
+			this.cbxQuality.TabIndex = 5;
 			this.cbxQuality.SelectionChangeCommitted += new System.EventHandler(this.Quality_SelectionChangeCommitted);
 			// 
 			// rbFullPage
@@ -305,7 +305,7 @@
 			this.rbFullPage.Location = new System.Drawing.Point(8, 24);
 			this.rbFullPage.Name = "rbFullPage";
 			this.rbFullPage.Size = new System.Drawing.Size(50, 17);
-			this.rbFullPage.TabIndex = 0;
+			this.rbFullPage.TabIndex = 1;
 			this.rbFullPage.TabStop = true;
 			this.rbFullPage.Text = "Page";
 			this.rbFullPage.UseVisualStyleBackColor = true;
@@ -317,7 +317,7 @@
 			this.lblQuality.Location = new System.Drawing.Point(104, 50);
 			this.lblQuality.Name = "lblQuality";
 			this.lblQuality.Size = new System.Drawing.Size(39, 13);
-			this.lblQuality.TabIndex = 17;
+			this.lblQuality.TabIndex = 4;
 			this.lblQuality.Text = "Quality";
 			// 
 			// splitter3
@@ -343,7 +343,7 @@
 			this.grbTwitch.Name = "grbTwitch";
 			this.grbTwitch.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
 			this.grbTwitch.Size = new System.Drawing.Size(328, 71);
-			this.grbTwitch.TabIndex = 26;
+			this.grbTwitch.TabIndex = 0;
 			this.grbTwitch.Text = "Twitch";
 			// 
 			// labelEx4
@@ -352,7 +352,7 @@
 			this.labelEx4.Location = new System.Drawing.Point(3, 3);
 			this.labelEx4.Name = "labelEx4";
 			this.labelEx4.Size = new System.Drawing.Size(39, 13);
-			this.labelEx4.TabIndex = 33;
+			this.labelEx4.TabIndex = 0;
 			this.labelEx4.Text = "Twitch";
 			// 
 			// txtUsername
@@ -361,7 +361,7 @@
 			this.txtUsername.Location = new System.Drawing.Point(8, 40);
 			this.txtUsername.Name = "txtUsername";
 			this.txtUsername.Size = new System.Drawing.Size(160, 20);
-			this.txtUsername.TabIndex = 18;
+			this.txtUsername.TabIndex = 2;
 			this.txtUsername.TextChanged += new System.EventHandler(this.Username_TextChanged);
 			// 
 			// lblUsername
@@ -370,7 +370,7 @@
 			this.lblUsername.Location = new System.Drawing.Point(8, 24);
 			this.lblUsername.Name = "lblUsername";
 			this.lblUsername.Size = new System.Drawing.Size(55, 13);
-			this.lblUsername.TabIndex = 15;
+			this.lblUsername.TabIndex = 1;
 			this.lblUsername.Text = "Username";
 			// 
 			// SettingsCtrl

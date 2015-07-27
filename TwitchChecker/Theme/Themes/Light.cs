@@ -20,13 +20,13 @@ namespace TwitchChecker.Theme.Themes
 
 		public Color SidebarHighlighted { get { return Color.FromArgb(173, 214, 255); } }
 
-		public Color TextUsername { get { return ColorProvider.VSLightText; } }
+		public Color TextUsername { get { return Color.FromArgb(30, 30, 30); } }
 
 		public Color TextCommon { get { return Color.FromArgb(68, 68, 68); } }
 
-		public Color TextContextMenu { get { return ColorProvider.VSLightText; } }
+		public Color TextContextMenu { get { return Color.FromArgb(30, 30, 30); } }
 
-		public Color TextContextMenuHighlight { get { return ColorProvider.VSLightText; } }
+		public Color TextContextMenuHighlight { get { return Color.FromArgb(30, 30, 30); } }
 
 		public ThemeStyle Theme { get { return ThemeStyle.Light; } }
 	}

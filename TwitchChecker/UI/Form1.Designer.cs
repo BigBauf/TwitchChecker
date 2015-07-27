@@ -35,7 +35,6 @@
 			this.ctmOpen = new System.Windows.Forms.ToolStripMenuItem();
 			this.ctmClose = new System.Windows.Forms.ToolStripMenuItem();
 			this.asdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.notificationCenter = new TwitchChecker.UI.UserComponent.NotificationManager(this.components);
 			this.pnlMain = new System.Windows.Forms.Panel();
 			this.sidebarCtrl1 = new TwitchChecker.UI.UserControls.SidebarCtrl();
 			this.ctmTray.SuspendLayout();
@@ -59,19 +58,19 @@
             this.ctmClose});
 			this.ctmTray.Name = "ctmTray";
 			this.ctmTray.ShowImageMargin = false;
-			this.ctmTray.Size = new System.Drawing.Size(167, 48);
+			this.ctmTray.Size = new System.Drawing.Size(166, 48);
 			this.ctmTray.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ctmTray_ItemClicked);
 			// 
 			// ctmOpen
 			// 
 			this.ctmOpen.Name = "ctmOpen";
-			this.ctmOpen.Size = new System.Drawing.Size(166, 22);
+			this.ctmOpen.Size = new System.Drawing.Size(165, 22);
 			this.ctmOpen.Text = "TwitchChecker öffnen";
 			// 
 			// ctmClose
 			// 
 			this.ctmClose.Name = "ctmClose";
-			this.ctmClose.Size = new System.Drawing.Size(166, 22);
+			this.ctmClose.Size = new System.Drawing.Size(165, 22);
 			this.ctmClose.Text = "Beenden";
 			// 
 			// asdToolStripMenuItem
@@ -122,7 +121,6 @@
 		private System.Windows.Forms.ToolStripMenuItem ctmOpen;
 		private System.Windows.Forms.ToolStripMenuItem ctmClose;
 		private System.Windows.Forms.ToolStripMenuItem asdToolStripMenuItem;
-		private TwitchChecker.UI.UserComponent.NotificationManager notificationCenter;
 		private System.Windows.Forms.Panel pnlMain;
 		private TwitchChecker.UI.UserControls.SidebarCtrl sidebarCtrl1;
 

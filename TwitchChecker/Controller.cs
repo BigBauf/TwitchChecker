@@ -12,8 +12,6 @@ namespace TwitchChecker
 
 		public IUIProvider UiProvider { get; private set; }
 
-		private string m_test;
-
 		//==============================================IController
 
 		public void Init()

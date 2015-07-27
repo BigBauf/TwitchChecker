@@ -12,7 +12,7 @@ namespace TwitchChecker.Theme.Themes
 
 		public Color ContextMenuBorder { get { return Color.FromArgb(203, 203, 203); } }
 
-		public Color ContextMenuHighlighted { get { return ColorProvider.TwitchPurple; } }
+		public Color ContextMenuHighlighted { get { return Color.FromArgb(100, 65, 165); } }
 
 		public Color None { get { return Color.Transparent; } }
 
@@ -24,7 +24,7 @@ namespace TwitchChecker.Theme.Themes
 
 		public Color TextCommon { get { return Color.FromArgb(140, 140, 140); } }
 
-		public Color TextContextMenu { get { return ColorProvider.TwitchPurple; } }
+		public Color TextContextMenu { get { return Color.FromArgb(100, 65, 165); } }
 
 		public Color TextContextMenuHighlight { get { return Color.White; } }
 

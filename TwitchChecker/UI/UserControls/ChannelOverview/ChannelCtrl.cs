@@ -23,7 +23,7 @@ namespace TwitchChecker.UI.UserControls
 		private System.Timers.Timer m_timer;
 		private bool m_isSeleceted = false;
 
-		//==============================================Konstruktor
+		//==============================================Ctor
 
 		public ChannelCtrl()
 		{

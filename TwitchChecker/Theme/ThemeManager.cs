@@ -15,7 +15,7 @@ namespace TwitchChecker.Theme
 
 		private ThemeManager()
 		{
-			//When the Provider isnt set here its imposible to Show UserControls in the Designer
+			//When the ColorProvider isn't set here it's imposible to show UserControls in the designer
 			ColorProvider = new Dark();
 		}
 
@@ -42,7 +42,7 @@ namespace TwitchChecker.Theme
 					break;
 
 				default:
-					throw new NotImplementedException();
+					throw new ArgumentException();
 			}
 		}
 

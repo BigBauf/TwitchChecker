@@ -23,32 +23,22 @@ namespace TwitchChecker.UI
 
 		private UiView m_currentView;
 
-		//==============================================Konstruktor
+		//==============================================Ctor
 
 		public Form1()
 		{
 			InitializeComponent();
-			this.SetStyle(
-								ControlStyles.UserPaint |
-								ControlStyles.AllPaintingInWmPaint |
-								ControlStyles.ResizeRedraw |
-								ControlStyles.ContainerControl |
-								ControlStyles.OptimizedDoubleBuffer |
-								ControlStyles.SupportsTransparentBackColor
-							  , true);
+			SetStyle(
+				ControlStyles.UserPaint |
+				ControlStyles.AllPaintingInWmPaint |
+				ControlStyles.ResizeRedraw |
+				ControlStyles.ContainerControl |
+				ControlStyles.OptimizedDoubleBuffer |
+				ControlStyles.SupportsTransparentBackColor,
+				true);
 		}
 
 		//==============================================EventHandler
-
-		protected override void WndProc(ref Message m)
-		{
-			if (m.Msg == NativeMethods.WM_SHOWME)
-			{
-				ShowInTaskbar = true;
-				ShowMe();
-			}
-			base.WndProc(ref m);
-		}
 
 		private void Main_Load(object sender, EventArgs e)
 		{
@@ -97,6 +87,18 @@ namespace TwitchChecker.UI
 			ShowInTaskbar = true;
 			this.Show();
 			this.Activate();
+		}
+
+		//==============================================Override
+
+		protected override void WndProc(ref Message m)
+		{
+			if (m.Msg == NativeMethods.WM_SHOWME)
+			{
+				ShowInTaskbar = true;
+				ShowMe();
+			}
+			base.WndProc(ref m);
 		}
 
 		//==============================================Methods
@@ -153,7 +155,7 @@ namespace TwitchChecker.UI
 						break;
 
 					default:
-						throw new NotImplementedException();
+						throw new ArgumentException();
 				}
 				if (settingsCtrl.UsernameChanged)
 					followingCtrl.Reload();
