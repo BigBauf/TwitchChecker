@@ -1,10 +1,10 @@
-﻿using System.Drawing;
+using System.Drawing;
 using System.Windows.Forms;
 using TwitchChecker.Theme;
 
 namespace TwitchChecker.UI.UserControls.Common
 {
-	public partial class UserControlEx : UserControl
+	public class UserControlEx : UserControl
 	{
 		//==============================================Fields
 

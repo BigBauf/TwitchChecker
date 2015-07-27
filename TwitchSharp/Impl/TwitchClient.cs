@@ -42,18 +42,18 @@ namespace TwitchSharp.Impl
 		{
 			switch (e.Action)
 			{
-				case System.Collections.Specialized.NotifyCollectionChangedAction.Add:
+				case NotifyCollectionChangedAction.Add:
 					OnChannelAdded(sender, new ChannelAddedEventArgs((IChannel)e.NewItems[0]));
 					break;
 
-				case System.Collections.Specialized.NotifyCollectionChangedAction.Remove:
+				case NotifyCollectionChangedAction.Remove:
 					((IChannel)e.OldItems[0]).Remove();
 					break;
 
-				case System.Collections.Specialized.NotifyCollectionChangedAction.Reset:
+				case NotifyCollectionChangedAction.Reset:
 
-				case System.Collections.Specialized.NotifyCollectionChangedAction.Move:
-				case System.Collections.Specialized.NotifyCollectionChangedAction.Replace:
+				case NotifyCollectionChangedAction.Move:
+				case NotifyCollectionChangedAction.Replace:
 					break;
 
 				default:
